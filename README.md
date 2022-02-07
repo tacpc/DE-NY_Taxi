@@ -10,3 +10,15 @@ In the container you can have Ubuntu 18.04, while your host is running on Window
 You can run multiple containers on one host and they won’t have any conflict.
 An image = set of instructions that were executed + state. All saved in “image”
 Installing docker: https://docs.docker.com/get-docker/
+
+* *Postgres*
+
+```
+docker run -it \
+-e POSTGRES_USER="root" \
+-e POSTGRES_PASSWORD="root" \
+-e POSTGRES_DB="ny_taxi" \
+-v "./ny-taxi-volume:/var/lib/postgresql/data" \
+-p 5432:5432 \
+postgres:13
+```
